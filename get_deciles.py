@@ -48,7 +48,7 @@ def get_user_activity(file_path):
 def calc_numiles(df, num_numiles):
     # Numiles
     activity_counts = df["Submissions"].value_counts().sort_index()
-    deciles = np.percentile(activity_counts, range(0, 99, 100//num_numiles))
+    deciles = np.percentile(activity_counts, range(0, 100, 100//num_numiles))
     return deciles.tolist()
 
 def get_numiles(file_path, num_numiles):
@@ -60,7 +60,7 @@ def partition_users(df, numiles):
     # Returns a dictionary of lists of the form {numile: [user1, user2, ...]}
     partition = {}
     for i in range(len(numiles) - 1):
-        partition[i] = df[(df["Submissions"] >= numiles[i]) & (df["Submissions"] < numiles[i+1])]["Author"].tolist()
+        partition[i] = df[(df["Submissions"] >= numiles[i]) & (df["Submissions"] < numiles[i + 1])]["Author"].tolist()
 
     # Save Partition to partition.txt
     with open("partition.txt", "w") as file:
@@ -123,6 +123,12 @@ def plot_numile_contributions(file_path, time_interval, num_numiles, chosen_numi
     numile_users_list = numile_users_dict[chosen_numile]
     print("2 - Partitioned")
 
+    # for all numiles, print the count of users in each numile
+    print("2.1 - Number of users in each numile:")
+    for i in range(num_numiles):
+        print(f"Number of users in numile {i}: {len(numile_users_dict[i])}")
+    
+
     # Filter DataFrame to only include users in the chosen numile
     df_in_numile = df[df.index.isin(numile_users_list)]
     print("3 - Filtered")
@@ -162,7 +168,7 @@ if __name__ == "__main__":
             # print(bucketed_post_timeline(file_path, 2592000))
 
             #plot_numile_contributions(file_path, 2592000, num_numiles, 8)
-            plot_numile_contributions(file_path, 10520000, num_numiles, 15)
+            plot_numile_contributions(file_path, 10520000, num_numiles, 18)
             
             # data_frame = bucketed_post_timeline(file_path, 2592000)
             # for column in data_frame:
