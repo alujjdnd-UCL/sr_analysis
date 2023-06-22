@@ -2,10 +2,12 @@ import os
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import numpy as np
 import tqdm
 from collections import Counter
 import datetime
+import time
 
 # Some Important Notes on the Code:
 # 1. The code assumes that the JSON files are in the data directory
@@ -283,43 +285,76 @@ def plot_numile_contributions(file_path, time_interval, num_numiles, chosen_numi
     print("Plot Numile Contributions Subprocess - Data Filtered")
 
 
+    ##### ------ SUMMARY STATISTICS ------ #####
+
     # A dictionary of the form {utc_timestamp: [minimum, 25th percentile, median, 75th percentile, maximum]} for that time period only
-    data = {}
+    summary_data = {}
 
     # Iterate over each time period
     for column in df_in_numile:
         # Get the minimum, 25th percentile, median, 75th percentile, and maximum number of posts in that time period
-        data[column] = df_in_numile[column].describe()[[0, 1, 2, 3, 4, 5, 6, 7]].tolist()
+        summary_data[column] = df_in_numile[column].describe()[[0, 1, 2, 3, 4, 5, 6, 7]].tolist()
     print("Plot Numile Contributions Subprocess - Data Described")
 
     # Convert data to a DataFrame, with each row representing a time period and each column representing a statistic
-    data_to_plot_df = pd.DataFrame.from_dict(data, orient='index', columns=['count', 'mean', 'std_dev','min', '25%', '50%', '75%', 'max'])
+    data_summary_statistics = pd.DataFrame.from_dict(summary_data, orient='index', columns=['count', 'mean', 'std_dev','min', '25%', '50%', '75%', 'max'])
     print("Plot Numile Contributions Subprocess - Data Converted to DataFrame")
 
     # Save data_to_plot_df to a TSV file with the summary statistics for each time period
-    data_to_plot_df.to_csv(f"output/plot_summary_stat.tsv", sep="\t")
+    data_summary_statistics.to_csv(f"output/plot_summary_stat.tsv", sep="\t")
+
+
+    ##### ------ PLOT DATA GEN ------ #####
+
+    # A dictionary of the form {utc_timestamp: [datapoint1, datapoint2, ...]} for that time period only
+    plot_data = {}
+
+    # Iterate over each time period
+    for column in df_in_numile:
+        # Get the number of posts in that time period
+        plot_data[column] = df_in_numile[column].tolist()
+    print("Plot Numile Contributions Subprocess - Data Converted to Dictionary")
+
+    # Save plot_data to a TSV file
+    with open(f"output/plot_data.tsv", 'w') as f:
+        for key in plot_data.keys():
+            f.write(f"{key}\t{plot_data[key]}\n")
 
 
     ##### ------ PLOT ------ #####
 
-    # Convert the Unix timestamp to datetime format
-    data_to_plot_df['time'] = pd.to_datetime(data_to_plot_df.index, unit='s')
+    # Create a new figure with a single subplot
+    fig, ax = plt.subplots()
 
-    # Set the 'time' column as the index
-    data_to_plot_df.set_index('time', inplace=True)
+    # Extract the utc_timestamps and datapoints from the dictionary
+    utc_timestamps = list(plot_data.keys())
+    datapoints = list(plot_data.values())
 
-    # Plotting the box plot
-    plt.figure(figsize=(10, 6))
-    data_to_plot_df[['min', '25%', '50%', '75%', 'max']].plot(kind='box')
-    plt.xlabel('Time')
-    plt.ylabel('Value')
-    plt.title('Box Plot of Min, 25%, 50%, 75%, Max')
-    plt.xticks(rotation=45)
+    # Omit Zeroes
+    datapoints = [[x for x in y if x != 0] for y in datapoints]
 
-    if not os.path.exists("figures"):
-        os.makedirs("figures")
+    # Plot the box plot
+    ax.boxplot(datapoints, showfliers=False)
 
-    plt.savefig(f"figures/box_plot_numile_{chosen_numile_range_lower}_{chosen_numile_range_upper}_{time_interval}.png")
+    # Set the x-axis labels to the utc_timestamps in year-month-day format
+    ax.set_xticks(range(1, len(utc_timestamps) + 1))
+    ax.set_xticklabels([datetime.datetime.utcfromtimestamp(x).strftime('%Y-%m-%d') for x in utc_timestamps], rotation=90)
+
+    # Set labels and title
+    ax.set_xlabel('Dates')
+    ax.set_ylabel('Submissions/Comments per User')
+    ax.set_title(f'Box Plot of Userly Submissions/Comments \nOver UTC Timestamps for Numiles {chosen_numile_range_lower} to {chosen_numile_range_upper} out of {num_numiles} Numiles')
+
+    # Add subtitle with the numile interval, time interval, and count of users in the chosen numile range
+    ax.text(0.5, 0.95, f"Numile Interval: {chosen_numile_range_lower} to {chosen_numile_range_upper} out of {num_numiles} Numiles\nTime Interval: {time_interval / 2592000} month(s)\nNumber of Users: {len(numile_users_list)}", horizontalalignment='center', verticalalignment='center', transform=ax.transAxes)
+
+    # Add margin to the figure
+    fig.subplots_adjust(left=0.1, right=0.9, bottom=0.2, top=0.9)
+
+    # Set the plot size
+    fig.set_size_inches(15, 7)
+
+    fig.savefig(f"figures/box_plot_numile_{chosen_numile_range_lower}_{chosen_numile_range_upper}_{time_interval}.png")
 
     
 
@@ -344,8 +379,16 @@ if __name__ == "__main__":
             # print(bucketed_post_timeline(file_path, 2592000))
 
             #plot_numile_contributions(file_path, 2592000, num_numiles, 8)
-            plot_numile_contributions(file_path, 10520000, num_numiles, 19, 19)
+
+            # Time the function
+            # start = time.time()
+            # plot_numile_contributions(file_path, 10520000, num_numiles, 17, 18)
+            # end = time.time()
+            # print(f"Time taken: {end - start} seconds")
             
             # data_frame = bucketed_post_timeline(file_path, 2592000)
             # for column in data_frame:
             #     print(data_frame[column])
+
+    for numile_interval in [[19, 19], [17, 18], [15, 16]]:
+        plot_numile_contributions(file_path, 10520000, num_numiles, numile_interval[0], numile_interval[1])
