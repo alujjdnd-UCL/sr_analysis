@@ -484,8 +484,6 @@ def plot_bounded(file_path, time_interval, lower_bound, upper_bound, start_date=
 
 
 
-
-
 # Main function
 if __name__ == "__main__":
 
