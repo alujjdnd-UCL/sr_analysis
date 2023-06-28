@@ -508,8 +508,10 @@ if __name__ == "__main__":
             # for column in data_frame:
             #     print(data_frame[column])
 
+            for bound_interval in [[1, 10],[11, 100], [101, 1000], [1000, 1000000000]]:
+                plot_bounded(file_path, 10520000, bound_interval[0], bound_interval[1], 1546300801, 1677628801)
+
     # for numile_interval in [[19, 19], [17, 18], [15, 16], [13, 14], [11, 12], [9, 10], [7, 8], [5, 6], [3, 4], [1, 2]]:
     #     plot_numile_contributions(file_path, 10520000, num_numiles, numile_interval[0], numile_interval[1])
 
-    for bound_interval in [[1, 10],[11, 100], [101, 1000], [1000, 1000000000]]:
-        plot_bounded(file_path, 10520000, bound_interval[0], bound_interval[1], 1546300801, 1677628801)
+    
