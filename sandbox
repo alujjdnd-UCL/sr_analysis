@@ -1,89 +1,10 @@
-'2019-01-01 - Bucket 0', 
-'2019-01-01 - Bucket 1', 
-'2019-01-01 - Bucket 2', 
-'2019-01-01 - Bucket 3', 
-
-'2020-01-01 - Bucket 0', 
-'2020-01-01 - Bucket 1', 
-'2020-01-01 - Bucket 2', 
-'2020-01-01 - Bucket 3', 
-
-'2021-01-01 - Bucket 0', 
-'2021-01-01 - Bucket 1', 
-'2021-01-01 - Bucket 2', 
-'2021-01-01 - Bucket 3', 
-
-'2022-01-01 - Bucket 0', 
-'2022-01-01 - Bucket 1', 
-'2022-01-01 - Bucket 2', 
-'2022-01-01 - Bucket 3'
-
-
-
-2019-01-01 - Bucket 0 -> 2020-01-01 - Bucket 0
-2019-01-01 - Bucket 0 -> 2020-01-01 - Bucket 1
-2019-01-01 - Bucket 0 -> 2020-01-01 - Bucket 2
-2019-01-01 - Bucket 0 -> 2020-01-01 - Bucket 3
-
-2019-01-01 - Bucket 1 -> 2020-01-01 - Bucket 0
-2019-01-01 - Bucket 1 -> 2020-01-01 - Bucket 1
-2019-01-01 - Bucket 1 -> 2020-01-01 - Bucket 2
-2019-01-01 - Bucket 1 -> 2020-01-01 - Bucket 3
-
-2019-01-01 - Bucket 2 -> 2020-01-01 - Bucket 0
-2019-01-01 - Bucket 2 -> 2020-01-01 - Bucket 1
-2019-01-01 - Bucket 2 -> 2020-01-01 - Bucket 2
-2019-01-01 - Bucket 2 -> 2020-01-01 - Bucket 3
-
-2019-01-01 - Bucket 3 -> 2020-01-01 - Bucket 0
-2019-01-01 - Bucket 3 -> 2020-01-01 - Bucket 1
-2019-01-01 - Bucket 3 -> 2020-01-01 - Bucket 2
-2019-01-01 - Bucket 3 -> 2020-01-01 - Bucket 3
-
-
-
-
-
-2020-01-01 - Bucket 0 -> 2021-01-01 - Bucket 0
-2020-01-01 - Bucket 0 -> 2021-01-01 - Bucket 1
-2020-01-01 - Bucket 0 -> 2021-01-01 - Bucket 2
-2020-01-01 - Bucket 0 -> 2021-01-01 - Bucket 3
-
-2020-01-01 - Bucket 1 -> 2021-01-01 - Bucket 0
-2020-01-01 - Bucket 1 -> 2021-01-01 - Bucket 1
-2020-01-01 - Bucket 1 -> 2021-01-01 - Bucket 2
-2020-01-01 - Bucket 1 -> 2021-01-01 - Bucket 3
-
-2020-01-01 - Bucket 2 -> 2021-01-01 - Bucket 0
-2020-01-01 - Bucket 2 -> 2021-01-01 - Bucket 1
-2020-01-01 - Bucket 2 -> 2021-01-01 - Bucket 2
-2020-01-01 - Bucket 2 -> 2021-01-01 - Bucket 3
-
-2020-01-01 - Bucket 3 -> 2021-01-01 - Bucket 0
-2020-01-01 - Bucket 3 -> 2021-01-01 - Bucket 1
-2020-01-01 - Bucket 3 -> 2021-01-01 - Bucket 2
-2020-01-01 - Bucket 3 -> 2021-01-01 - Bucket 3
-
-
-
-
-
-2021-01-01 - Bucket 0 -> 2022-01-01 - Bucket 0
-2021-01-01 - Bucket 0 -> 2022-01-01 - Bucket 1
-2021-01-01 - Bucket 0 -> 2022-01-01 - Bucket 2
-2021-01-01 - Bucket 0 -> 2022-01-01 - Bucket 3
-
-2021-01-01 - Bucket 1 -> 2022-01-01 - Bucket 0
-2021-01-01 - Bucket 1 -> 2022-01-01 - Bucket 1
-2021-01-01 - Bucket 1 -> 2022-01-01 - Bucket 2
-2021-01-01 - Bucket 1 -> 2022-01-01 - Bucket 3
-
-2021-01-01 - Bucket 2 -> 2022-01-01 - Bucket 0
-2021-01-01 - Bucket 2 -> 2022-01-01 - Bucket 1
-2021-01-01 - Bucket 2 -> 2022-01-01 - Bucket 2
-2021-01-01 - Bucket 2 -> 2022-01-01 - Bucket 3
-
-2021-01-01 - Bucket 3 -> 2022-01-01 - Bucket 0
-2021-01-01 - Bucket 3 -> 2022-01-01 - Bucket 1
-2021-01-01 - Bucket 3 -> 2022-01-01 - Bucket 2
-2021-01-01 - Bucket 3 -> 2022-01-01 - Bucket 3
+{"parent_id":"t3_6dlz5","distinguished":null,"edited":false,"name":"t1_c042c8e","author_flair_css_class":null,"link_id":"t3_6dlz5","score":1,"archived":true,"gilded":0,"controversiality":0,"retrieved_on":1425851268,"ups":1,"subreddit":"texas","downs":0,"subreddit_id":"t5_2qho4","created_utc":"1211229866","id":"c042c8e","score_hidden":false,"author_flair_text":null,"author":"[deleted]","body":"Stay away!  "}
+{"parent_id":"t3_6u4tg","subreddit":"texas","downs":0,"gilded":0,"created_utc":"1217437549","distinguished":null,"body":"[deleted]","edited":false,"id":"c04vg7r","link_id":"t3_6u4tg","archived":true,"ups":1,"score_hidden":false,"controversiality":0,"author":"[deleted]","subreddit_id":"t5_2qho4","score":1,"author_flair_css_class":null,"retrieved_on":1425872036,"name":"t1_c04vg7r","author_flair_text":null}
+{"parent_id":"t1_c04vg7r","subreddit":"texas","downs":0,"gilded":0,"created_utc":"1217454061","body":"I'm sensing some hostility there...","distinguished":null,"edited":false,"id":"c04vkwm","link_id":"t3_6u4tg","archived":true,"ups":1,"score_hidden":false,"controversiality":0,"author":"codepoet","subreddit_id":"t5_2qho4","score":1,"author_flair_css_class":"flag","name":"t1_c04vkwm","retrieved_on":1425872097,"author_flair_text":"born and bred"}
+{"gilded":0,"downs":0,"subreddit":"texas","parent_id":"t1_c04vg7r","id":"c04vl7u","edited":false,"distinguished":null,"body":"The main problem with Houston is that everything about this city is pure logistics with almost no concern for aesthetics. Another problem I've noticed is that almost anyone who moves here sees it as just a pit stop in life before moving on. Hell, even most of the people born here view it like that. Whether they do move on or not (mostly not), a lot of people just don't see it as \"home\". The people here just sit around and bitch and moan and never do anything about its problems because they're always looking to move to Austin or San Francisco or some other magical land where working at a Starbucks or in a cubicle develops some profound meaning unattainable in Houston. When the only people who see it as home are the industries, it's bound to feel soulless. The people here don't care about recycling because no one sees themselves as really having any stake in it since they're just visiting for 10, 20, 30, 40 years.","created_utc":"1217455430","author":"spacekraken","controversiality":0,"score_hidden":false,"ups":3,"archived":true,"link_id":"t3_6u4tg","retrieved_on":1425872105,"name":"t1_c04vl7u","author_flair_text":null,"author_flair_css_class":null,"score":3,"subreddit_id":"t5_2qho4"}
+{"created_utc":"1218549486","distinguished":null,"controversiality":0,"subreddit":"texas","subreddit_id":"t5_2qho4","name":"t1_c050kkp","author_flair_css_class":null,"body":"That's the problem when developers build private roads.  The county won't accept them for maintenance until they're brought up to standards.  Happens a lot where I live in Texas and the residents don't have the money to pitch in.  Bad situation.","author_flair_text":null,"id":"c050kkp","downs":0,"link_id":"t3_6v4e2","author":"[deleted]","gilded":0,"score":1,"retrieved_on":1425875254,"edited":false,"archived":true,"score_hidden":false,"parent_id":"t3_6v4e2","ups":1}
+{"score":1,"created_utc":"1219627507","score_hidden":false,"retrieved_on":1425877879,"distinguished":null,"name":"t1_c055r2r","subreddit":"texas","subreddit_id":"t5_2qho4","author":"[deleted]","body":"This just sounds like a lawsuit waiting to happen, but I like where their heads are.  If everyone's armed, criminals will have more risks to consider when committing crimes.","id":"c055r2r","ups":1,"controversiality":0,"link_id":"t3_6wilr","edited":false,"author_flair_css_class":null,"downs":0,"archived":true,"parent_id":"t3_6wilr","gilded":0,"author_flair_text":null}
+{"link_id":"t3_7m9s9","author_flair_text":"born and bred","subreddit_id":"t5_2qho4","name":"t1_6f8h","controversiality":0,"parent_id":"t3_7m9s9","subreddit":"texas","author_flair_css_class":"","score_hidden":false,"retrieved_on":1428221438,"body":"Do Schlitterbahn and wurstfest count? lol","archived":true,"created_utc":"1230588215","gilded":0,"distinguished":null,"id":"6f8h","edited":false,"score":1,"downs":0,"ups":1,"author":"s810"}
+{"created_utc":"1228138790","name":"t1_c06lqqp","link_id":"t3_7gk32","retrieved_on":1425904833,"distinguished":null,"gilded":0,"author_flair_text":null,"ups":1,"parent_id":"t3_7gk32","author":"plbogen","score_hidden":false,"score":1,"downs":0,"subreddit":"texas","archived":true,"controversiality":0,"body":"Texas already has concealed permits, I think thats worse than open carry.","edited":false,"subreddit_id":"t5_2qho4","author_flair_css_class":null,"id":"c06lqqp"}
+{"subreddit_id":"t5_2qho4","body":"It has its purpose and place.","edited":false,"id":"c06lsu5","author_flair_css_class":null,"downs":0,"author":"bluequail","score_hidden":false,"score":1,"archived":true,"controversiality":0,"subreddit":"texas","distinguished":null,"link_id":"t3_7gk32","retrieved_on":1425904862,"author_flair_text":null,"ups":1,"parent_id":"t1_c06lqqp","gilded":0,"created_utc":"1228147507","name":"t1_c06lsu5"}
+{"downs":0,"score_hidden":false,"author":"bluequail","score":1,"archived":true,"controversiality":0,"subreddit":"texas","subreddit_id":"t5_2qho4","body":"I don't agree with the article when it says that it is the stopping and going that causes more gas usage - because when you are barreling down the road doing 80 mph, my old truck will seriously suck down the gas.\n\nThat being said, there are places in Tx, namely that stretch of 10 that runs between El Paso and San Antonio where the speed limit is 80 mph...  just because there is a whole lot of nothing out there....","edited":false,"id":"c06lswb","author_flair_css_class":null,"created_utc":"1228147709","name":"t1_c06lswb","distinguished":null,"link_id":"t3_6r4g1","retrieved_on":1425904862,"author_flair_text":null,"ups":1,"parent_id":"t3_6r4g1","gilded":0}
