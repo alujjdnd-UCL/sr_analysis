@@ -278,8 +278,8 @@ def graph_category(category):
                 
 
         # For each row, go through the LIWC categories and add the time_bucket to the correct list
-        for category in LIWC_categories:
-            LIWC_category_dict[category][activity_bucket_index][time_bucket] += (LIWC_categories[category])
+        for cat in LIWC_categories:
+            LIWC_category_dict[cat][activity_bucket_index][time_bucket] += (LIWC_categories[cat])
 
         # Update the progress bar
         pbar.update(1)
@@ -305,18 +305,18 @@ def graph_category(category):
     for activity_bucket_index in range(len(activity_bucket_limits)):
         for time_bucket_index in range(len(time_buckets)):
             # Sum the LIWC categories for each activity and time bucket
-            LIWC_category_sums[activity_bucket_index][time_bucket_index] = sum(LIWC_category_dict[category][activity_bucket_index][time_bucket_index] for category in data)
+            LIWC_category_sums[activity_bucket_index][time_bucket_index] = sum(LIWC_category_dict[cat][activity_bucket_index][time_bucket_index] for cat in data)
 
     # Normalise the data by dividing each value by the total number of LIWC detected words in that activity and time bucket
     for activity_bucket_index in range(len(activity_bucket_limits)):
         for time_bucket_index in range(len(time_buckets)):
-            for category in data:
+            for cat in data:
                 # Normalise the data
                 # If sum is zero, set to zero, otherwise divide
                 if LIWC_category_sums[activity_bucket_index][time_bucket_index] == 0:
-                    LIWC_category_dict_normalised[category][activity_bucket_index][time_bucket_index] = 0
+                    LIWC_category_dict_normalised[cat][activity_bucket_index][time_bucket_index] = 0
                 else:
-                    LIWC_category_dict_normalised[category][activity_bucket_index][time_bucket_index] /= LIWC_category_sums[activity_bucket_index][time_bucket_index]
+                    LIWC_category_dict_normalised[cat][activity_bucket_index][time_bucket_index] /= LIWC_category_sums[activity_bucket_index][time_bucket_index]
 
 
     # Save LIWC_category_dict_normalised as a literal string to a file
